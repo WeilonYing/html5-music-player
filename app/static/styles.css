@@ -1,0 +1,93 @@
+/*Font styles*/
+
+body {
+    background-color: #005580;
+    background: linear-gradient(to left, #333, #333); /* Standard syntax */
+    font-family: "Ubuntu", Century Gothic, Helvetica, Arial, sans-serif;
+    color: #efefef;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 7em;
+    font-weight: 300;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    color: white;
+}
+
+h2 {
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 4em;
+    font-weight: 500;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    color: white;
+}
+
+h3 {
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 3em;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    color: white;
+}
+h4 {
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    color: white;
+}
+
+h5 {
+    font-family: "Raleway", Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    color: white;
+}
+
+a {
+    color: #bfccfa;
+    transition: 0.25s;
+}
+
+a:hover {
+    color: white;
+}
+b {
+    color: white;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1.3em;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    margin-bottom: 0;
+}
+li {
+    font-size: 1.3em;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+br {
+    display: block;
+    text-shadow: 1px 1px 4px #3d3d3d;
+    margin: 10px 0;
+}
+
+canvas {
+    display: inline-block;
+    position: fixed;
+    z-index: -100;
+}
+
+
+

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name="google-site-verification" content="kvvve-arJtWefg3BjT0t_ka6TdcFpVuBygOKXTQA8xQ" />
+        <title>Weilon Ying - {{ pagename }}</title>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300,400italic,700|Raleway:400,300,500' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div style="width: 100; height: 2em"></div> <!-- Padding for fixed navbar -->
+        <div id="mainbody">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="footer">
+        </div>
+    </body>
+</html>
