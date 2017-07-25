@@ -1,22 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
     <audio controls id="play">
-		<source src="{{ url_for('static', filename='Exile Vilify.mp3') }}" type="audio/mpeg">
+		<source src="" type="audio/mpeg">
 		Your browser does not support the audio element.
 	</audio>
 	
 	<script>
+		var musiclocation = "{{ url_for('static', filename='') }}";
+		console.log(musiclocation);
+		var songs = {{ songlist|tojson|safe }};
 		var player = document.getElementById("play");
-		console.log(player);
-		player.preload = "auto";
-		player.playbackRate = 1.0;
-		player.play();
-		
-		var timer = setInterval(switchSong, 1000);
+		var index = 0
+		if (self.songs.length > 0) {
+			self.player.src = self.musiclocation + self.songs[self.index];
+			player.preload = "auto";
+			player.playbackRate = 1.0;
+			player.play();
+			
+			var timer = setInterval(switchSong, 1000);
+		}
 		
 		function switchSong() {
-			if (self.player.ended) {
-				self.player.src = "{{ url_for('static', filename='09 - Shake That - Band-Maid.mp3') }}";
+			if (self.player.ended && self.index < self.songs.length - 1) {
+				self.player.src = self.musiclocation + self.songs[++index];
 				self.player.play();
 			}
 		}
