@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# mp3 - precaution against accidentally facilitating piracy
+.mp3
