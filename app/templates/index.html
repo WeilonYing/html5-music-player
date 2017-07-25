@@ -5,48 +5,17 @@
 			<source src="" type="audio/mpeg" align="center">
 			Your browser does not support the audio element.
 		</audio>
-		<button onClick="nextSong()">Next Song</button>
-		<button onClick="prevSong()">Previous Song</button>
 		<p>Now playing: <span id="now-playing"></span></p>
+		<p></p>
+		<button onClick="prevSong()">Previous Song</button>
+		<button onClick="nextSong()">Next Song</button>
+		<p></p>
+		<button onClick="shuffleSongs()">Shuffle</button>
 	</div>
-	
 	<script>
-		var musiclocation = "{{ url_for('static', filename='') }}";
-		console.log(musiclocation);
+		var musiclocation = "{{ url_for('static', filename='') }}" + "music/";
 		var songs = {{ songlist|tojson|safe }};
-		var player = document.getElementById("play");
-		var index = 0
-		if (self.songs.length > 0) {
-			player.preload = "auto";
-			player.playbackRate = 1.0;
-			playSong(self.songs[self.index]);
-			
-			var timer = setInterval(switchSong, 1000);
-		}
-		
-		function switchSong() {
-			if (self.player.ended && self.index < self.songs.length - 1) {
-				playSong(self.songs[++index]);
-			}
-		}
-		
-		function playSong(songName) {
-			self.player.src = self.musiclocation + songName;
-			player.play();
-			document.getElementById("now-playing").innerText = songName;
-		}
-		
-		function nextSong() {
-			if (self.index < self.songs.length - 1) {
-				playSong(self.songs[++index]);
-			}
-		}
-		
-		function prevSong() {
-			if (self.index > 0) {
-				playSong(self.songs[--index]);
-			}
-		}
 	</script>
+	<script src="{{ url_for('static', filename='sickbeats.js') }}"></script>
 	
 {% endblock %}

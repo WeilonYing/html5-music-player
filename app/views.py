@@ -13,11 +13,11 @@ def index():
 def getSongList():
 	output = []
 	
-	static_path = app.static_folder
+	static_path = os.path.join(app.static_folder, "music/")
 	files = os.listdir(static_path)
 	mpeg_regex = re.compile(r'^.*\.mp3$')
 	for name in files:
 		if mpeg_regex.match(name) is not None:
 			output.append(name)
-
+	output.sort()
 	return output

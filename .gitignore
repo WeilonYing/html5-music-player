@@ -102,3 +102,6 @@ ENV/
 
 # mp3 - precaution against accidentally facilitating piracy
 *.mp3
+
+# password file
+pass.word
