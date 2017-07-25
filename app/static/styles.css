@@ -8,8 +8,20 @@ body {
     margin: 0;
 }
 
+#player {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#controls {
+    float: bottom;
+    bottom: 10%;
+    left: 50%;
+}
+
 audio {
-	width: 50%;
+	width: 100%;
 	float: center;
 }
 
