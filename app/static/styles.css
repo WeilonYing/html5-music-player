@@ -8,6 +8,11 @@ body {
     margin: 0;
 }
 
+audio {
+	width: 50%;
+	float: center;
+}
+
 h1 {
     font-family: "Raleway", Arial, sans-serif;
     font-size: 7em;

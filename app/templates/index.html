@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-    <audio controls id="play">
-		<source src="" type="audio/mpeg">
-		Your browser does not support the audio element.
-	</audio>
+	<div align="center">
+		<audio controls id="play">
+			<source src="" type="audio/mpeg" align="center">
+			Your browser does not support the audio element.
+		</audio>
+		<button onClick="nextSong()">Next Song</button>
+		<button onClick="prevSong()">Previous Song</button>
+		<p>Now playing: <span id="now-playing"></span></p>
+	</div>
 	
 	<script>
 		var musiclocation = "{{ url_for('static', filename='') }}";
@@ -12,19 +17,36 @@
 		var player = document.getElementById("play");
 		var index = 0
 		if (self.songs.length > 0) {
-			self.player.src = self.musiclocation + self.songs[self.index];
 			player.preload = "auto";
 			player.playbackRate = 1.0;
-			player.play();
+			playSong(self.songs[self.index]);
 			
 			var timer = setInterval(switchSong, 1000);
 		}
 		
 		function switchSong() {
 			if (self.player.ended && self.index < self.songs.length - 1) {
-				self.player.src = self.musiclocation + self.songs[++index];
-				self.player.play();
+				playSong(self.songs[++index]);
+			}
+		}
+		
+		function playSong(songName) {
+			self.player.src = self.musiclocation + songName;
+			player.play();
+			document.getElementById("now-playing").innerText = songName;
+		}
+		
+		function nextSong() {
+			if (self.index < self.songs.length - 1) {
+				playSong(self.songs[++index]);
+			}
+		}
+		
+		function prevSong() {
+			if (self.index > 0) {
+				playSong(self.songs[--index]);
 			}
 		}
 	</script>
+	
 {% endblock %}

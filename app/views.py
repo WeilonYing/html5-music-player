@@ -1,16 +1,23 @@
-from flask import jsonify, Markup, render_template, redirect, request
-from random import randint
-import json
+from flask import jsonify, Markup, render_template
 from app import app
+import os
+import re
 
 @app.route('/')
 @app.route('/index/')
 def index():
     return render_template('index.html',
         pagename = 'Home',
-		songlist = ['Exile Vilify.mp3', '09 - Shake That - Band-Maid.mp3'])
+		songlist = getSongList())
 		
 def getSongList():
-	output = ["Exile Vilify.mp3", "09 - Shake That - Band-Maid.mp3"]
-	print (output)
-	return "[" + ",".join(output) + "]"
+	output = []
+	
+	static_path = app.static_folder
+	files = os.listdir(static_path)
+	mpeg_regex = re.compile(r'^.*\.mp3$')
+	for name in files:
+		if mpeg_regex.match(name) is not None:
+			output.append(name)
+
+	return output
