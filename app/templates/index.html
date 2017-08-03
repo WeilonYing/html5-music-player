@@ -15,9 +15,9 @@
 		</audio>
     </div>
 	<script>
-		var musiclocation = "{{ url_for('static', filename='') }}" + "music/";
-		var songs = {{ songlist|tojson|safe }};
+		var musiclocation = "{{ url_for('static', filename='') }}" + "music";
+		var files = {{ files|tojson|safe }};
 	</script>
 	<script src="{{ url_for('static', filename='sickbeats.js') }}"></script>
-	
+
 {% endblock %}
