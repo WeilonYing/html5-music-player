@@ -12,7 +12,7 @@ Simple music server and player built in Python Flask and JavaScript
 * Shuffle
 * Directory support
 
-### Planned features
+### Planned feature
 * More pretty song name display
 * Artist and album support
 * Album art support

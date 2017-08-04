@@ -105,3 +105,6 @@ ENV/
 
 # password file
 pass.word
+
+# music files
+app/static/music/*
