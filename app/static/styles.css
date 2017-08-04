@@ -14,6 +14,12 @@ body {
     width: 100%;
 }
 
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 audio {
 	width: 100%;
 	float: center;
@@ -99,6 +105,3 @@ canvas {
     position: fixed;
     z-index: -100;
 }
-
-
-

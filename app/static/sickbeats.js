@@ -13,6 +13,16 @@ if (self.files != null) {
     player.playbackRate = 1.0;
 }
 
+//Initialise file browser
+var currentDir = musiclocation;
+var prevDir = null;
+var childrenDirs = self.files.children;
+
+if (self.files.children != null) {
+
+}
+
+//Functions
 function initSongQueue() {
     self.addAllSongs(musiclocation, self.files.children);
     if (self.songQueue.length > 0) {
@@ -24,7 +34,7 @@ function addAllSongs(parentdir, directory) {
     for (var key in directory) {
         console.log(key);
         let object = directory[key];
-        if (object.type == "file") {
+        if (object.type == "mp3") {
             this.songQueue.push(parentdir + "/" + object.name);
         }
         if (object.type == "directory") {
