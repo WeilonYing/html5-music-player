@@ -28,7 +28,12 @@ def getMusicFiles(path): # credit to https://stackoverflow.com/a/25226267
 @app.route('/index/')
 def index():
     return render_template('index.html',
-        pagename = 'Home',
+        pagename = 'Home')
+        
+@app.route('/player/')
+def player():
+    return render_template('player.html',
+        pagename = 'Player',
         files = musicFiles)
 
 # initialise file system

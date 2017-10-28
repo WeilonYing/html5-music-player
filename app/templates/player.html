@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="navbar">
+    </div>
+	<div align="center" id="player">
+        <p></p>
+		<button onClick="shuffleSongs()">Shuffle</button>
+		<p></p>
+		<button onClick="prevSong()">Previous Song</button>
+		<button onClick="nextSong()">Next Song</button>
+        <p></p>
+        <p>Now playing: <span id="now-playing"></span></p>
+		<p></p>
+        <audio controls id="play">
+			<source src="" type="audio/mpeg" align="center">
+			Your browser does not support the audio element.
+		</audio>
+    </div>
+	<script>
+		var musiclocation = "{{ url_for('static', filename='') }}" + "music";
+		var files = {{ files|tojson|safe }};
+	</script>
+	<script src="{{ url_for('static', filename='sickbeats.js') }}"></script>
+
+{% endblock %}
