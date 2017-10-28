@@ -1,4 +1,4 @@
-from flask import jsonify, Markup, render_template, send_from_directory
+from flask import jsonify, Markup, render_template
 from app import app
 import os
 import re
@@ -35,10 +35,6 @@ def player():
     return render_template('player.html',
         pagename = 'Player',
         files = musicFiles)
-        
-@app.route ('/music/<path:path>')
-def serve_music(path):
-    return send_from_directory('static/music/', path)
 
 # initialise file system
 if not initialised:
