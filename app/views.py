@@ -38,7 +38,7 @@ def player():
         
 @app.route ('/music/<path:path>')
 def serve_music(path):
-    return send_from_directory('static', 'music', path)
+    return send_from_directory('static/music/', path)
 
 # initialise file system
 if not initialised:
