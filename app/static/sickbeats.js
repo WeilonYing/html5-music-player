@@ -1,4 +1,4 @@
-
+//var musiclocation and var files located in player.html
 console.log(musiclocation);
 
 var player = document.getElementById("play");
